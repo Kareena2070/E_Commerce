@@ -37,6 +37,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       name,
       email,
       role: "customer",
+      password,
     };
 
     // Save user (fake DB for now)
