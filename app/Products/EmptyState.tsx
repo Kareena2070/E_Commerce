@@ -10,7 +10,7 @@ function EmptyState() {
       <p className="text-gray-500 text-sm mt-1">
         Try adjusting your filters
       </p>
-      <button className="mt-4 bg-yellow-400 hover:bg-yellow-500 px-5 py-2 rounded-md font-medium">
+      <button className="mt-4 bg-[#FF9F1C] hover:bg-yellow-500 px-5 py-2 rounded-md font-medium">
         Clear Filters
       </button>
     </div>

@@ -66,7 +66,7 @@ export default function ProductsClient() {
               href="/Products"
               className={`px-4 py-2 rounded-full text-sm whitespace-nowrap ${
                 !activeCategory
-                  ? "bg-yellow-400 text-black font-medium"
+                  ? "bg-[#FF9F1C] text-black font-medium"
                   : "bg-gray-100 hover:bg-gray-200"
               }`}
             >
@@ -80,7 +80,7 @@ export default function ProductsClient() {
                 href={`/Products?category=${encodeURIComponent(cat.category)}`}
                 className={`px-4 py-2 rounded-full text-sm whitespace-nowrap ${
                   activeCategory === cat.category
-                    ? "bg-yellow-400 text-black font-medium"
+                    ? "bg-[#FF9F1C] text-black font-medium"
                     : "bg-gray-100 hover:bg-gray-200"
                 }`}
               >

@@ -16,7 +16,7 @@ function Navbar() {
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="bg-yellow-300 w-full px-2 py-2 relative shadow-md">
+    <div className="bg-[#FF9F1C] w-full px-2 py-2 relative shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold">

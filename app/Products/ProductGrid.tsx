@@ -8,7 +8,7 @@ function ProductGrid({ products }: { products: Product[] }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-6">
       {products.map((product) => {
-        const quantity = getQuantity(product.id); // ✅ moved inside
+        const quantity = getQuantity(product.id); 
         return (
           <div key={product.id} className="bg-white rounded-xl shadow-sm p-3">
             <div className="relative h-40 w-full mb-3">
@@ -42,16 +42,6 @@ function ProductGrid({ products }: { products: Product[] }) {
                   </p>
                 )}
               </div>
-
-              {/* {product.inStock ? (
-              <button className="bg-green-500 text-white text-sm px-4 py-1.5 rounded-md">
-                ADD
-              </button>
-            ) : (
-              <span className="text-red-500 text-xs">
-                Out of Stock
-              </span>
-            )} */}
 
               {product.inStock ? (
                 quantity === 0 ? (
