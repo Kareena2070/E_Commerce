@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import { mockProducts } from "../services/products";
+import { MoveRight, IndianRupee } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 export default function Essentials() {
   const { addToCart, increaseQty, decreaseQty, getQuantity } = useCart();
 
   return (
-    <section className="bg-gray-50 py-10">
+    <section className="bg-[#fff9f2] py-10">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="flex justify-between items-center mb-6">
@@ -18,14 +19,16 @@ export default function Essentials() {
               Daily essentials delivered fresh
             </p>
           </div>
-          <button className="text-green-600 text-sm font-medium hover:underline">
-            see all →
+          <button className="text-green-600 text-sm font-medium hover:underline flex items-center">
+            see all <MoveRight />
           </button>
         </div>
 
         {/* Product Scroll */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-          {mockProducts.slice(0, 6).map((product) => {
+          {mockProducts
+          .filter((product) => product.category === "Dairy & Breakfast")
+          .slice(0, 6).map((product) => {
             const quantity = getQuantity(product.id);
             return (
               <div
@@ -62,10 +65,10 @@ export default function Essentials() {
                   {/* Price Row */}
                   <div className="flex items-center justify-between mt-2">
                     <div>
-                      <p className="font-semibold text-sm">₹{product.price}</p>
+                      <p className="font-semibold text-sm"><IndianRupee size={15} />{product.price}</p>
                       {product.oldPrice && (
                         <p className="text-xs text-gray-400 line-through">
-                          ₹{product.oldPrice}
+                          <IndianRupee size={12} />{product.oldPrice}
                         </p>
                       )}
                     </div>

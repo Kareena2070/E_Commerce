@@ -56,7 +56,7 @@ export default function ProductsClient() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 pb-10">
         {/* All the Categories */}
 
         <div className="bg-white border-b">

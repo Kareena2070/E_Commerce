@@ -6,7 +6,7 @@ function Category() {
 
 
   return (
-    <section className="w-full bg-gray-50 py-8">
+    <section className="w-full bg-[#fff9f2] py-8">
       <div className="max-w-7xl mx-auto px-4 ">
         
         {/* Heading */}

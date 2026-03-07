@@ -1,5 +1,6 @@
 import { Zap, MoveRight, Star } from 'lucide-react';
 import Image from 'next/image';
+import Link from "next/link";
 
 function HeroSection() {
 
@@ -31,10 +32,12 @@ function HeroSection() {
               delivered to your doorstep in minutes.
             </p>
           </div>
-          <button className="bg-black text-white flex gap-2  items-center w-fit p-2 rounded-2xl">
+          <Link
+          href='/Products'
+          className="bg-black text-white flex gap-2  items-center w-fit p-2 rounded-2xl">
             Order Now
             <MoveRight size={20} />{" "}
-          </button>
+          </Link>
         </article>
 
         <article className="flex items-center gap-5 justify-center whitespace-nowrap text-sm  lg:w-1/2">
