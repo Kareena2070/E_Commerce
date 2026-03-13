@@ -2,7 +2,7 @@
 
 import { Clock, ShieldCheck, Truck, Percent } from "lucide-react";
 
-export default function DeliveryFeatures() {
+export default function DeliveryFeatures({ cols = "grid-cols-4", className = "" }) {
   const features = [
     {
       icon: Clock,
@@ -28,35 +28,21 @@ export default function DeliveryFeatures() {
 
   return (
     <section className="w-full bg-gray-100 border-y">
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-
-            return (
-              <div
-                key={index}
-                className="flex items-center gap-4"
-              >
-                {/* Icon Box */}
-                <div className="bg-green-100 text-green-600 p-3 rounded-xl">
-                  <Icon size={22} />
-                </div>
-
-                {/* Text */}
-                <div>
-                  <h3 className="font-semibold text-sm md:text-base">
-                    {feature.title}
-                  </h3>
-                  <p className="text-xs text-gray-600">
-                    {feature.subtitle}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    <div className={`w-full border rounded-lg p-4 bg-gray-50 ${className}`}>
+      <div className={`grid ${cols} gap-6`}>
+        {features.map((feature, index) => (
+          <div key={index} className="flex gap-3 items-center ">
+            <div className="text-green-500 bg-green-100 p-2 rounded">
+              {features.icon}
+            </div>
+            <div>
+              <h1 className="text-sm font-semibold leading-tight">{feature.title}</h1>
+              <p className="text-xs">{feature.subtitle}</p>
+            </div>
+          </div>
+        ))}
       </div>
+    </div>
     </section>
   );
 }

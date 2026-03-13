@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Product } from "../types/product";
 import { useCart } from "../context/CartContext";
+import Link from "next/link";
+
 
 function ProductGrid({ products }: { products: Product[] }) {
   const { addToCart, increaseQty, decreaseQty, getQuantity } = useCart();
@@ -8,31 +10,33 @@ function ProductGrid({ products }: { products: Product[] }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-6">
       {products.map((product) => {
-        const quantity = getQuantity(product.id); 
+        const quantity = getQuantity(product.id);
         return (
           <div key={product.id} className="bg-white rounded-xl shadow-sm p-3">
-            <div className="relative h-40 w-full mb-3">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover rounded-lg w-full h-full"
-              />
-              {product.discount && (
-                <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
-                  {product.discount}% OFF
-                </span>
-              )}
-            </div>
+            <Link href={`/cart/Product/${product.id}`}>
+              <div className="relative h-40 w-full mb-3">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover rounded-lg w-full h-full"
+                />
+                {product.discount && (
+                  <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+                    {product.discount}% OFF
+                  </span>
+                )}
+              </div>
 
-            <p className="text-xs text-green-600 font-medium">8 MINS</p>
+              <p className="text-xs text-green-600 font-medium">8 MINS</p>
 
-            <h3 className="text-sm font-medium mt-1 line-clamp-2">
-              {product.name}
-            </h3>
+              <h3 className="text-sm font-medium mt-1 line-clamp-2">
+                {product.name}
+              </h3>
 
-            <p className="text-xs text-gray-500 mt-1">{product.weight}</p>
+              <p className="text-xs text-gray-500 mt-1">{product.weight}</p>
 
+            </Link>
             <div className="flex items-center justify-between mt-3">
               <div>
                 <p className="font-semibold">₹{product.price}</p>
