@@ -19,9 +19,10 @@ export default function Bestsellers() {
               Most ordered products near you
             </p>
           </div>
-          <button className="text-green-600 text-sm font-medium hover:underline flex items-center">
+          <Link
+          href='/Products?discount=true' className="text-green-600 text-sm font-medium hover:underline flex items-center">
             see all <MoveRight />
-          </button>
+          </Link>
         </div>
 
         {/* Product Scroll */}

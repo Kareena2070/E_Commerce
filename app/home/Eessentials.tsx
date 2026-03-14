@@ -20,9 +20,10 @@ export default function Essentials() {
               Daily essentials delivered fresh
             </p>
           </div>
-          <button className="text-green-600 text-sm font-medium hover:underline flex items-center">
+          <Link
+            href={`/Products?category=${encodeURIComponent("Dairy & Breakfast")}`} className="text-green-600 text-sm font-medium hover:underline flex items-center">
             see all <MoveRight />
-          </button>
+          </Link>
         </div>
 
         {/* Product Scroll */}

@@ -15,7 +15,7 @@ export default function Home() {
     <HeroSection />
 
     <Category />
-    <DeliveryFeatures />
+    <DeliveryFeatures  cols = "grid-cols-2 lg:grid-cols-4"/>
     <Bestsellers />
     <FreshDeals />
     <Essentials />

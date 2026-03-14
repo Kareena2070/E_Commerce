@@ -27,22 +27,22 @@ export default function DeliveryFeatures({ cols = "grid-cols-4", className = "" 
   ];
 
   return (
-    <section className="w-full bg-gray-100 border-y">
-    <div className={`w-full border rounded-lg p-4 bg-gray-50 ${className}`}>
-      <div className={`grid ${cols} gap-6`}>
-        {features.map((feature, index) => (
-          <div key={index} className="flex gap-3 items-center ">
-            <div className="text-green-500 bg-green-100 p-2 rounded">
-              {features.icon}
+    <section className="w-full bg-gray-100 border-y px-2 md:px-16 lg:px-28">
+      <div className={`w-full rounded-lg p-4 bg-gray-50 ${className}`}>
+        <div className={`grid ${cols} gap-6`}>
+          {features.map((feature, index) => (
+            <div key={index} className="flex gap-3 items-center ">
+              <div className="text-green-500 bg-green-100 p-2 rounded">
+                <feature.icon className="w-5 h-5" />
+              </div>
+              <div>
+                <h1 className="text-sm font-semibold leading-tight">{feature.title}</h1>
+                <p className="text-xs">{feature.subtitle}</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-sm font-semibold leading-tight">{feature.title}</h1>
-              <p className="text-xs">{feature.subtitle}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </section>
   );
 }

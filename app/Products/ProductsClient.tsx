@@ -14,6 +14,7 @@ export default function ProductsClient() {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   const activeCategory = searchParams.get("category");
+  const discountParam = searchParams.get("discount");
 
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("low-high");
@@ -53,6 +54,10 @@ export default function ProductsClient() {
     filteredProducts.sort((a, b) => b.price - a.price);
   }
 
+  if (discountParam === "true") {
+    filteredProducts = filteredProducts.filter((product) => product.discount);
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -64,11 +69,10 @@ export default function ProductsClient() {
             {/* ALL */}
             <Link
               href="/Products"
-              className={`px-4 py-2 rounded-full text-sm whitespace-nowrap ${
-                !activeCategory
-                  ? "bg-[#FF9F1C] text-black font-medium"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm whitespace-nowrap ${!activeCategory
+                ? "bg-[#FF9F1C] text-black font-medium"
+                : "bg-gray-100 hover:bg-gray-200"
+                }`}
             >
               All
             </Link>
@@ -78,11 +82,10 @@ export default function ProductsClient() {
               <Link
                 key={index}
                 href={`/Products?category=${encodeURIComponent(cat.category)}`}
-                className={`px-4 py-2 rounded-full text-sm whitespace-nowrap ${
-                  activeCategory === cat.category
-                    ? "bg-[#FF9F1C] text-black font-medium"
-                    : "bg-gray-100 hover:bg-gray-200"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm whitespace-nowrap ${activeCategory === cat.category
+                  ? "bg-[#FF9F1C] text-black font-medium"
+                  : "bg-gray-100 hover:bg-gray-200"
+                  }`}
               >
                 {cat.category}
               </Link>
