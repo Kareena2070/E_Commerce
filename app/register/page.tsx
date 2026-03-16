@@ -3,6 +3,8 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
+import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 export default function RegisterPage() {
   const { register } = useAuth();
@@ -21,10 +23,11 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col items-center h-screen">
+      <Navbar />
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded shadow w-80 flex flex-col gap-4"
+        className="bg-white p-6 rounded shadow w-80 flex flex-col gap-4 mt-28"
       >
         <h2 className="text-xl font-bold text-center">Register</h2>
 
@@ -55,6 +58,13 @@ export default function RegisterPage() {
         <button className="bg-green-500 text-white py-2 rounded">
           Register
         </button>
+        
+        <p className="text-center">
+          Already have an account?{" "}
+          <Link href="/login" className="text-blue-600">
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );
