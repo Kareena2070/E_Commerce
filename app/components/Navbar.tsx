@@ -20,8 +20,8 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold">
-          <div className="bg-black p-2 text-white rounded">FOA</div>
-          <p className="hidden sm:block">FOA-Food</p>
+          <div className="bg-black p-2 text-white rounded">F-G</div>
+          <p className="hidden sm:block">FoodyGo</p>
         </Link>
 
         {/* Desktop Location */}
