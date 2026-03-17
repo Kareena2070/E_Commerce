@@ -59,6 +59,9 @@ export default function CartPage() {
                             src={item.image}
                             alt={item.name}
                             fill
+                             sizes="(max-width: 768px) 100vw, 
+         (max-width: 1200px) 50vw, 
+         25vw"
                             className="object-cover rounded-lg"
                           />
                         </div>

@@ -20,7 +20,7 @@ export default function Bestsellers() {
             </p>
           </div>
           <Link
-          href='/Products?discount=true' className="text-green-600 text-sm font-medium hover:underline flex items-center">
+            href='/Products?discount=true' className="text-green-600 text-sm font-medium hover:underline flex items-center">
             see all <MoveRight />
           </Link>
         </div>
@@ -44,6 +44,9 @@ export default function Bestsellers() {
                         src={product.image}
                         alt={product.name}
                         fill
+                        sizes="(max-width: 768px) 100vw, 
+                                (max-width: 1200px) 50vw, 
+                                25vw"
                         className="object-cover"
                       />
 

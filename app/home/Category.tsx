@@ -8,7 +8,7 @@ function Category() {
   return (
     <section className="w-full bg-[#fff9f2] py-8">
       <div className="max-w-7xl mx-auto px-4 ">
-        
+
         {/* Heading */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold">Shop by Category</h2>
@@ -31,6 +31,9 @@ function Category() {
                   src={category.image}
                   alt={category.category}
                   fill
+                  sizes="(max-width: 768px) 100vw, 
+                          (max-width: 1200px) 50vw, 
+                          25vw"
                   className="object-cover"
                 />
               </div>
